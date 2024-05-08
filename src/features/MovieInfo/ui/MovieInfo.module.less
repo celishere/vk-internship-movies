@@ -1,0 +1,44 @@
+.MovieInfo {
+  padding-top: 48px;
+  padding-left: 18px;
+  padding-bottom: 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  a {
+    font-size: 30px;
+    font-family: var(--font-sf-semibold);
+
+    color: #FFFFFF;
+  }
+}
+
+.MovieInfoList {
+  display: flex;
+  gap: 24px;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+
+.MovieInfoGroupItem {
+  max-width: 400px;
+
+  a {
+    font-family: var(--font-sf);
+    font-size: 22px;
+    color: hsla(0, 0%, 100%, .3);
+  }
+
+  p {
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    font-family: var(--font-sf);
+    font-size: 18px;
+  }
+}

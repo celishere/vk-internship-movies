@@ -1,0 +1,1 @@
+export { MovieLayout } from "./MovieLayout";

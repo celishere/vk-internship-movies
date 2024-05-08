@@ -1,0 +1,27 @@
+@circle_bg: #313136;
+@spinner: #616161;
+
+.Loader {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  animation: spinner .8s ease infinite;
+}
+
+.Loader circle:first-child {
+  stroke: @circle_bg;
+}
+
+.Loader circle:last-child {
+  stroke: @spinner;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}

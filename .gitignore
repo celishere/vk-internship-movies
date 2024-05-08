@@ -1,5 +1,15 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+.idea
+
+.storybook
+.swc
+__tests__
+analyze
+storybook-static
+
+bun.lockb
+
 # dependencies
 /node_modules
 /.pnp
@@ -34,3 +44,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Sentry Config File
+.sentryclirc
+
+*storybook.log

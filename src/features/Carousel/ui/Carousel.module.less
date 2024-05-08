@@ -1,0 +1,35 @@
+.CarouselBox {
+  display: flex;
+
+  padding-top: 60px;
+
+  --slides-to-show: 1.05;
+  --spacing-between-slides: 8px;
+
+  @media(min-width: 375px) {
+    --slides-to-show: 1.07;
+    --spacing-between-slides: 8px;
+  }
+
+  @media(min-width: 600px) {
+    --slides-to-show: 1.33;
+    --spacing-between-slides: 12px;
+  }
+
+  @media(min-width: 960px) {
+    --slides-to-show: 1.67;
+    --spacing-between-slides: 12px;
+  }
+
+  @media(min-width: 1320px) {
+    --slides-to-show: 1.77;
+    --spacing-between-slides: 16px;
+  }
+
+  @media(min-width: 1720px) {
+    --slides-to-show: 1.84;
+    --spacing-between-slides: 20px;
+  }
+
+  --item-width: calc((100vw - var(--spacing-between-slides)) / var(--slides-to-show));
+}
