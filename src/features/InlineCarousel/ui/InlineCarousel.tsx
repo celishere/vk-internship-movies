@@ -1,6 +1,6 @@
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, ReactNode } from "react";
 
-import Flicking from "@egjs/react-flicking";
+import useEmblaCarousel from "embla-carousel-react";
 
 import { classNames } from "vk/shared/lib/classNames/classNames";
 
@@ -11,30 +11,36 @@ type CarouselVariant = 'base' | 'featured';
 interface CarouselProps {
     title: string;
     variant?: CarouselVariant;
-    children: ReactNode;
+    children: ReactNode[];
 }
 
 export const InlineCarousel: FC<CarouselProps> = (props) => {
     const { title, variant, children } = props;
 
-    const [isLoading, setLoading] = useState(true);
-
-    useEffect(() => {
-        setLoading(false);
-    }, []);
+    const [emblaRef] = useEmblaCarousel({ align: "start", dragFree: true });
 
     return (
-        <div className={ classNames(cls.CarouselBox, undefined, [variant === "featured" ? cls.CarouselBoxFeatured : ""]) }>
-            {!isLoading && <a>{title}</a>}
+        <div className={
+            classNames(
+                cls.CarouselContainer,
+                undefined,
+                [variant === "featured" ? cls.CarouselContainerFeatured : ""]
+            )
+        }>
+            <a>{title}</a>
 
-            <Flicking
-                align="prev"
-                bounce={100}
-                bound
-                useFindDOMNode={true}
+            <div
+                className={cls.CarouselViewport}
+                ref={emblaRef}
             >
-                { children }
-            </Flicking>
+                <div className={cls.CarouselBox}>
+                    {children.map((child, index) => (
+                        <div className={cls.CarouselSlide} key={ index }>
+                            { child }
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 };

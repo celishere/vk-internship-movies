@@ -19,7 +19,8 @@ const nextConfig = withLess({
     return config;
   },
   env: {
-    IMAGES_CDN: "https://cdn.tvoe.live"
+    IMAGES_CDN: "https://cdn.tvoe.live",
+    API_URL: "http://localhost:3000"
   },
   experimental: {
     webpackBuildWorker: true

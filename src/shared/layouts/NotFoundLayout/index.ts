@@ -1,1 +1,3 @@
-export { NotFoundLayout } from "./NotFoundLayout";
+export {
+    NotFoundLayout
+} from "./NotFoundLayout";

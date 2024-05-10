@@ -8,8 +8,6 @@ export const MovieCastCard = (props: IPerson) => {
         photo
     } = props;
 
-    console.log(photo)
-
     return (
         <div className={ cls.MovieCastCard }>
             <img src={ photo.src } alt={ name } loading="lazy"/>

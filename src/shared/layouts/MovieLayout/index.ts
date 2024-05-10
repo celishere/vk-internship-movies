@@ -1,1 +1,3 @@
-export { MovieLayout } from "./MovieLayout";
+export {
+    MovieLayout
+} from "./MovieLayout";

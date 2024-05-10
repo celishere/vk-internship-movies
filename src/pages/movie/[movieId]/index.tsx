@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { InferGetServerSidePropsType } from 'next';
 
-import axios from "axios";
-
 import { ServerSideContextInterface } from "vk/shared/const/params";
 import { log, LOGGER_COLORS } from "vk/shared/const/logger";
 
@@ -13,6 +11,7 @@ import { MovieLayout } from "vk/shared/layouts/MovieLayout";
 import { IMovie } from "vk/entities/Movie/interface";
 
 import "@egjs/react-flicking/dist/flicking.css";
+import $api from "vk/shared/http";
 
 interface MoviePageProps {
     props: {
@@ -25,7 +24,7 @@ export default function MoviePage({ movieId }: InferGetServerSidePropsType<typeo
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get<IMovie>('/api/getMovie', {
+        $api.get<IMovie>('/api/getMovie', {
             params: {
                 id: movieId
             }

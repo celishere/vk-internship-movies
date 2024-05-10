@@ -1,5 +1,9 @@
 import { useRouter } from "next/router";
 
+import Image from "next/image";
+
+import { classNames } from "vk/shared/lib/classNames/classNames";
+
 import { RatingBadge } from "vk/shared/ui/RatingBadge";
 
 import cls from "./CarouselItem.module.less";
@@ -37,12 +41,17 @@ export const CarouselItem = (props: CarouselItemProps) => {
 
     return (
         <div
-            key={ props.id }
-            id={ props.id }
-            className={ cls.CarouselItem }
+            className={ classNames(cls.CarouselItem, undefined, ["Carousel__item"]) }
             onClick={ open }
         >
-            <img className={ cls.CarouselBg } src={ imgSrc } alt={ name } loading="lazy"/>
+            <img className={ cls.CarouselBg } src={ imgSrc } alt={ name }/>
+            <Image
+                className={ cls.CarouselShadow }
+                src={ imgSrc }
+                alt={ name }
+                width={ 50 }
+                height={ 50 }
+            />
 
             <div className={ cls.CarouselMetaBox }>
                 <div className={ cls.CarouselMeta }>

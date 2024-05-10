@@ -1,5 +1,4 @@
 import { Component, ErrorInfo, ReactNode, Suspense } from "react";
-import axios from "axios";
 
 import { ErrorPage } from "vk/widgets/ErrorPage/ui/ErrorPage";
 import { log, LOGGER_COLORS } from "vk/shared/const/logger";

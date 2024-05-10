@@ -2,7 +2,7 @@ import { memo, useEffect, useState } from "react";
 
 import Head from "next/head";
 
-import axios from "axios";
+import $api from "vk/shared/http";
 
 import { Carousel } from "vk/features/Carousel";
 import { CarouselItem } from "vk/features/CarouselItem";
@@ -17,14 +17,14 @@ export const MainLayout = memo(() => {
     const [newest, setNewest] = useState<IMovie[]>([]);
 
     useEffect(() => {
-        axios.get<IMovie[]>('/data/movies.json')
+        $api.get<IMovie[]>('/data/movies.json')
             .then((result) => {
                 setFeatured(result.data);
             })
     }, []);
 
     useEffect(() => {
-        axios.get<IMovie[]>('/data/newMovies.json')
+        $api.get<IMovie[]>('/data/newMovies.json')
             .then((result) => {
                 setNewest(result.data);
             })
@@ -37,41 +37,51 @@ export const MainLayout = memo(() => {
             </Head>
 
             <div className="container">
-                <Carousel>
-                    {
-                        featured.map((item) => (
-                            <CarouselItem
-                                id={ item.id }
-                                name={ item.name }
-                                dateReleased={ new Date(item.dateReleased) }
-                                genreName={ item.genreName }
-                                cover={ item.cover }
-                                logo={ item.logo }
-                                poster={ item.poster }
-                                ageLevel={ item.ageLevel }
-                                rating={ item.rating }
-                            />
-                        ))
-                    }
-                </Carousel>
+                {
+                    featured.length > 0 && (
+                        <Carousel>
+                            {
+                                featured.map((item) => (
+                                    <CarouselItem
+                                        key={ item.id }
+                                        id={ item.id }
+                                        name={ item.name }
+                                        dateReleased={ new Date(item.dateReleased) }
+                                        genreName={ item.genreName }
+                                        cover={ item.cover }
+                                        logo={ item.logo }
+                                        poster={ item.poster }
+                                        ageLevel={ item.ageLevel }
+                                        rating={ item.rating }
+                                    />
+                                ))
+                            }
+                        </Carousel>
+                    )
+                }
 
-                <InlineCarousel title="Новинки" variant="featured">
-                    {
-                        newest.map((item) => (
-                            <InlineCarouselItem
-                                id={ item.id }
-                                name={ item.name }
-                                dateReleased={ new Date(item.dateReleased) }
-                                genreName={ item.genreName }
-                                cover={ item.cover }
-                                logo={ item.logo }
-                                poster={ item.poster }
-                                ageLevel={ item.ageLevel }
-                                rating={ item.rating }
-                            />
-                        ))
-                    }
-                </InlineCarousel>
+                {
+                    newest.length > 0 && (
+                        <InlineCarousel title="Новинки" variant="featured">
+                            {
+                                newest.map((item) => (
+                                    <InlineCarouselItem
+                                        key={ item.id }
+                                        id={ item.id }
+                                        name={ item.name }
+                                        dateReleased={ new Date(item.dateReleased) }
+                                        genreName={ item.genreName }
+                                        cover={ item.cover }
+                                        logo={ item.logo }
+                                        poster={ item.poster }
+                                        ageLevel={ item.ageLevel }
+                                        rating={ item.rating }
+                                    />
+                                ))
+                            }
+                        </InlineCarousel>
+                    )
+                }
 
                 <div style={{ paddingBottom: "48px" }}/>
             </div>

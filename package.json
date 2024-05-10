@@ -1,6 +1,6 @@
 {
   "name": "vk-internship-movies",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,10 +11,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@egjs/flicking-plugins": "^4.7.1",
-    "@egjs/react-flicking": "^4.11.2",
     "@sentry/nextjs": "7.105.0",
     "axios": "^1.6.8",
+    "embla-carousel-autoplay": "^8.0.4",
+    "embla-carousel-react": "^8.0.4",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "next": "14.0.0",

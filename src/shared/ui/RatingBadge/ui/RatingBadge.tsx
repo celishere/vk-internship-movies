@@ -19,6 +19,14 @@ export const RatingBadge = (props: RatingBadgeProps) => {
     }
 
     return (
-        <span className={ classNames(cls.RatingBadge, undefined, [cls[`RatingBadge${color}`]]) }>{ rating }</span>
+        <span className={
+            classNames(
+                cls.RatingBadge,
+                undefined,
+                [cls[`RatingBadge${color}`]]
+            )
+        }>
+            { rating }
+        </span>
     );
 };

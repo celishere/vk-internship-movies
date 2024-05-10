@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from "react";
 import Head from "next/head";
 
-import axios from "axios";
+import $api from "vk/shared/http";
 
 import { IMovie } from "vk/entities/Movie/interface";
 
@@ -22,7 +22,7 @@ export const MovieLayout = memo((props: MovieLayoutProps) => {
     const [similar, setSimilar] = useState<IMovie[]>([]);
 
     useEffect(() => {
-        axios.get<IMovie[]>('/data/newMovies.json')
+        $api.get<IMovie[]>('/data/newMovies.json')
             .then((result) => {
                 setSimilar(result.data);
             })
@@ -43,8 +43,11 @@ export const MovieLayout = memo((props: MovieLayoutProps) => {
 
                 <InlineCarousel title="Актеры">
                     {
-                        data.info.cast.map(person => (
-                            <MovieCastCard {...person}/>
+                        data.info.cast.map((person, index) => (
+                            <MovieCastCard
+                                key={ index }
+                                {...person}
+                            />
                         ))
                     }
                 </InlineCarousel>
@@ -53,6 +56,7 @@ export const MovieLayout = memo((props: MovieLayoutProps) => {
                     {
                         similar.map((item) => (
                             <InlineCarouselItem
+                                key={ item.id }
                                 id={ item.id }
                                 name={ item.name }
                                 dateReleased={ new Date(item.dateReleased) }

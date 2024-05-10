@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import axios from "axios";
+
+import $api from "vk/shared/http";
 
 import { CarouselItemProps } from "vk/features/CarouselItem/ui/CarouselItem";
 
@@ -10,7 +11,7 @@ export default async function handler(
   const { id } = req.query;
 
   try {
-    const { data } = await axios.get<CarouselItemProps[]>('http://localhost:3000/data/movies.json');
+    const { data } = await $api.get<CarouselItemProps[]>('/data/movies.json');
     const item = data.find((item) => item.id === String(id));
 
     if (item) {

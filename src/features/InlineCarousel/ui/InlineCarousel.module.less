@@ -1,12 +1,25 @@
-.CarouselBox {
+.CarouselContainer {
   display: flex;
   flex-direction: column;
 
   gap: 24px;
-  padding: 24px 12px;
+  padding: 0 12px;
 }
 
-.CarouselBox a {
+.CarouselViewport {
+  overflow: hidden;
+
+  padding-bottom: 40px;
+}
+
+.CarouselBox {
+  backface-visibility: hidden;
+  display: flex;
+
+  touch-action: pan-y pinch-zoom;
+}
+
+.CarouselContainer a {
   padding-left: 8px;
 
   color: #FFFFFF;
@@ -14,7 +27,7 @@
   font-family: var(--font-sf-semibold);
 }
 
-.CarouselBoxFeatured a {
+.CarouselContainerFeatured a {
   font-size: 64px;
   font-style: italic;
 
