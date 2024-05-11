@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 import { RatingBadge } from "vk/shared/ui/RatingBadge";
@@ -32,18 +33,26 @@ export const InlineCarouselItem = (props: CarouselItemProps) => {
 
     return (
         <div
-            key={ props.id }
-            id={ props.id }
-            className={ cls.CarouselItem }
-            onClick={ open }
+            key={props.id}
+            id={props.id}
+            className={cls.CarouselItem}
+            onClick={open}
         >
-            <img className={ cls.CarouselBg } src={ imgSrc } alt={ name } loading="lazy" />
+            <Image
+                className={cls.CarouselBg}
+                src={imgSrc}
+                alt={name}
+                width={500}
+                height={500}
+            />
 
-            <div className={ cls.CarouselMetaBox }>
-                <div className={ cls.CarouselMeta }>
-                    <div className={ cls.CarouselInfo }>
-                        <RatingBadge rating={ rating } />
-                    </div>
+            <div className={cls.CarouselItemContent}>
+                <p>{name}</p>
+            </div>
+
+            <div className={cls.CarouselMetaBox}>
+                <div className={cls.CarouselInfo}>
+                    <RatingBadge rating={rating} />
                 </div>
             </div>
         </div>

@@ -4,10 +4,10 @@ import Head from "next/head";
 
 import $api from "vk/shared/http";
 
-import { Carousel } from "vk/features/Carousel";
-import { CarouselItem } from "vk/features/CarouselItem";
+import { Carousel } from "vk/shared/ui/Carousel";
+import { InlineCarousel } from "vk/shared/ui/InlineCarousel";
 
-import { InlineCarousel } from "vk/features/InlineCarousel";
+import { CarouselItem } from "vk/features/CarouselItem";
 import { InlineCarouselItem } from "vk/features/InlineCarouselItem";
 
 import { IMovie } from "vk/entities/Movie/interface";
@@ -62,7 +62,7 @@ export const MainLayout = memo(() => {
 
                 {
                     newest.length > 0 && (
-                        <InlineCarousel title="Новинки" variant="featured">
+                        <InlineCarousel title="Новинки">
                             {
                                 newest.map((item) => (
                                     <InlineCarouselItem

@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>
 
 export const Outline: Story = {
     args: {
-        variant: "outline"
+        variant: "outlined"
     }
 }
 

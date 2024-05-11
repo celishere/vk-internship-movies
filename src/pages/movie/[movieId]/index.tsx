@@ -10,7 +10,6 @@ import { MovieLayout } from "vk/shared/layouts/MovieLayout";
 
 import { IMovie } from "vk/entities/Movie/interface";
 
-import "@egjs/react-flicking/dist/flicking.css";
 import $api from "vk/shared/http";
 
 interface MoviePageProps {

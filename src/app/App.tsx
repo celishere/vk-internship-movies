@@ -1,15 +1,25 @@
-import { memo, Suspense } from "react";
+import { Suspense } from "react";
 import type { AppProps } from "next/app";
 
-import { LoadingLayout } from "vk/shared/layouts/LoadingLayout";
+import NextNProgress from 'nextjs-progressbar';
 
-const App = memo((props: AppProps) => {
+import { LoadingLayout } from "vk/shared/layouts/LoadingLayout";
+import { Header } from "vk/widgets/Header";
+
+const App = ((props: AppProps) => {
     const { Component, pageProps } = props;
 
     return (
-        <Suspense fallback={ <LoadingLayout/> }>
-            <Component {...pageProps} />
-        </Suspense>
+        <>
+            <NextNProgress
+                color="var(--color-primary)"
+                height={2}
+            />
+            <Suspense fallback={ <LoadingLayout/> }>
+                <Header/>
+                <Component {...pageProps} />
+            </Suspense>
+        </>
     )
 });
 

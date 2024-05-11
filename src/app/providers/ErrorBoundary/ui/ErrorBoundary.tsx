@@ -1,6 +1,6 @@
 import { Component, ErrorInfo, ReactNode, Suspense } from "react";
 
-import { ErrorPage } from "vk/widgets/ErrorPage/ui/ErrorPage";
+import { ErrorPage } from "vk/widgets/ErrorPage";
 import { log, LOGGER_COLORS } from "vk/shared/const/logger";
 
 interface ErrorBoundaryProps {

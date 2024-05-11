@@ -4,7 +4,7 @@ import { classNames, Mods } from "vk/shared/lib/classNames/classNames";
 
 import cls from "./Button.module.less";
 
-export type ButtonVariant = 'outline' | 'filled';
+export type ButtonVariant = 'outlined' | 'filled' | 'clean';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
@@ -27,7 +27,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
     const {
         className,
-        variant = 'outline',
+        variant = 'outlined',
         disabled,
         children,
         fullWidth,

@@ -1,4 +1,6 @@
 .CarouselItem {
+  --duration: 0.5s;
+
   position: relative;
 
   cursor: pointer;
@@ -20,16 +22,49 @@
     width: 150px;
     height: 240px;
   }
-}
 
-.CarouselItem a {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @media (min-width: 900px) {
+    transition: transform var(--duration);
 
-  font-size: 24px;
-  font-weight: bold;
+    &:hover {
+      transform: scale(1.035);
+
+      .CarouselItemContent {
+        opacity: 1;
+        visibility: visible;
+
+        background-color: rgba(#000, 0.85);
+      }
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 6;
+
+    pointer-events: none;
+
+    border-radius: var(--radius);
+    border: 1px solid rgba(#fff, 0.1);
+  }
+
+  a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: bold;
+  }
 }
 
 .CarouselBg {
@@ -58,12 +93,9 @@
   height: 30%;
 
   top: 2%;
-}
-
-.CarouselMeta {
-  position: absolute;
-
   left: 4%;
+
+  z-index: 9;
 }
 
 .CarouselLogo {
@@ -89,4 +121,37 @@
   font-size: 14px;
 
   padding-top: 4px;
+
+  z-index: 6;
+}
+
+.CarouselItemContent {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 3;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity var(--duration),
+  visibility var(--duration),
+  background-color var(--duration);
+
+  p {
+    position: absolute;
+
+    width: 100%;
+
+    bottom: 24px;
+
+    text-align: center;
+  }
 }

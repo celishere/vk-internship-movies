@@ -34,6 +34,10 @@ const nextConfig = withLess({
       {
         protocol: "https",
         hostname: "image.openmoviedb.com"
+      },
+      {
+        protocol: "https",
+        hostname: "st.kp.yandex.net"
       }
     ]
   },

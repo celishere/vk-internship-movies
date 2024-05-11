@@ -1,21 +1,41 @@
 .CarouselItem {
-  padding-top: 64px;
-
   position: relative;
 
   cursor: pointer;
 
-  width: var(--item-width);
   height: 600px;
+
+  background: var(--color-loader);
+
+  border-radius: var(--radius);
 
   a {
     height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
     font-size: 24px;
     font-weight: bold;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 6;
+
+    pointer-events: none;
+
+    border-radius: var(--radius);
+    border: 1px solid rgba(#fff, 0.1);
   }
 }
 
@@ -35,8 +55,7 @@
   object-fit: cover;
   object-position: center;
 
-  border: 1px solid rgba(255, 255, 255, .1);
-  border-radius: 12px;
+  border-radius: var(--radius);
 
   z-index: 4;
 }

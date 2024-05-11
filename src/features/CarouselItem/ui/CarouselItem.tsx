@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 import { classNames } from "vk/shared/lib/classNames/classNames";
@@ -42,11 +43,24 @@ export const CarouselItem = (props: CarouselItemProps) => {
             className={ classNames(cls.CarouselItem, undefined, ["Carousel__item"]) }
             onClick={ open }
         >
-            <img className={ cls.CarouselBg } src={ imgSrc } alt={ name }/>
+            <Image
+                className={ cls.CarouselBg }
+                src={ imgSrc }
+                alt={ name }
+                width={ 1200 }
+                height={ 900 }
+            />
 
             <div className={ cls.CarouselMetaBox }>
                 <div className={ cls.CarouselMeta }>
-                    <img className={ cls.CarouselLogo } src={ logoSrc } alt={ name } loading="lazy"/>
+                    <Image
+                        className={ cls.CarouselLogo }
+                        src={ logoSrc }
+                        alt={ name }
+                        width={ 300 }
+                        height={ 300 }
+                        quality={ 50 }
+                    />
 
                     <div className={ cls.CarouselInfo }>
                         <RatingBadge rating={ rating } />
