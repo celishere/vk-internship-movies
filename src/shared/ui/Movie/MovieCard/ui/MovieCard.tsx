@@ -7,7 +7,7 @@ import { BackIcon } from "vk/shared/ui/Icons/Back/BackIcon";
 
 import { IMovie } from "vk/entities/Movie/interface";
 
-import cls from "./MovieCard.module.less";
+import cls from "./MovieCard.module.scss";
 
 export const MovieCard = (props: IMovie) => {
     const {
@@ -25,9 +25,6 @@ export const MovieCard = (props: IMovie) => {
 
     const back = () => router.push('/');
 
-    const imgSrc = `${ process.env.IMAGES_CDN }/${ cover.src }`;
-    const logoSrc = `${ process.env.IMAGES_CDN }/${ logo.src }`;
-
     return (
         <section className={cls.MovieCard}>
             <div className={cls.MovieCardBg}>
@@ -44,7 +41,7 @@ export const MovieCard = (props: IMovie) => {
                 </div>
                 <div className={cls.MovieCardBgImage}>
                     <Image
-                        src={imgSrc}
+                        src={cover.src}
                         alt={name}
                         width={1000}
                         height={500}
@@ -57,7 +54,7 @@ export const MovieCard = (props: IMovie) => {
                 <div className={cls.MovieCardContent}>
                     <Image
                         className={cls.MovieCardLogo}
-                        src={logoSrc}
+                        src={logo.src}
                         alt={name}
                         width={500}
                         height={400}

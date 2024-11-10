@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, ForwardedRef, forwardRef, ReactNode } from "react
 
 import { classNames, Mods } from "vk/shared/lib/classNames/classNames";
 
-import cls from "./Button.module.less";
+import cls from "./Button.module.scss";
 
 export type ButtonVariant = 'outlined' | 'filled' | 'clean';
 

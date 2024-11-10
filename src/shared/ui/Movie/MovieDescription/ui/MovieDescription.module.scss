@@ -1,0 +1,26 @@
+.MovieDescription {
+  padding-top: 48px;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+
+  display: flex;
+  flex-direction: column;
+
+  max-width: 800px;
+
+  gap: 12px;
+
+  a {
+    font-size: 30px;
+    font-family: var(--font-sf-semibold);
+  }
+
+  p {
+    font-size: 18px;
+    font-family: var(--font-sf);
+
+    color: rgba(#fff, 0.75);
+
+    line-height: 24px;
+  }
+}

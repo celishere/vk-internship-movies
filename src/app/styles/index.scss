@@ -1,0 +1,60 @@
+@import "_vars";
+
+body {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 15px;
+
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-track-piece  {
+  background-color: #131313;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: #313131;
+
+  border-radius: 12px;
+}
+
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  font: inherit;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  margin: 0;
+  padding: 0;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none
+}
+
+:active,:hover {
+  outline: 0
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(1vh * 100);
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}

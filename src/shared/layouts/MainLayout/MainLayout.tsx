@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import Head from "next/head";
 
@@ -12,7 +12,7 @@ import { InlineCarouselItem } from "vk/features/InlineCarouselItem";
 
 import { IMovie } from "vk/entities/Movie/interface";
 
-export const MainLayout = memo(() => {
+export const MainLayout = () => {
     const [featured, setFeatured] = useState<IMovie[]>([]);
     const [newest, setNewest] = useState<IMovie[]>([]);
 
@@ -87,4 +87,4 @@ export const MainLayout = memo(() => {
             </div>
         </>
     );
-})
+};

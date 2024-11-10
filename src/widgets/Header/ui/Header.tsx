@@ -4,7 +4,7 @@ import { classNames } from "vk/shared/lib/classNames/classNames";
 
 import { useHeaderFixed } from "vk/widgets/Header/lib";
 
-import cls from "./Header.module.less";
+import cls from "./Header.module.scss";
 import Link from "next/link";
 
 export const Header = () => {

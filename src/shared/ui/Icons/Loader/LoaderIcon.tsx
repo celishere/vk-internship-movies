@@ -1,4 +1,4 @@
-import cls from "./Loader.module.less";
+import cls from "./Loader.module.scss";
 
 export const LoaderIcon = () => {
     return (

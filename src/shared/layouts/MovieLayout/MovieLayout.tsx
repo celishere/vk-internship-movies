@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 
 import $api from "vk/shared/http";
@@ -18,7 +18,7 @@ interface MovieLayoutProps {
     data: IMovie;
 }
 
-export const MovieLayout = memo((props: MovieLayoutProps) => {
+export const MovieLayout = (props: MovieLayoutProps) => {
     const { data } = props;
     const [similar, setSimilar] = useState<IMovie[]>([]);
 
@@ -72,4 +72,4 @@ export const MovieLayout = memo((props: MovieLayoutProps) => {
             </InlineCarousel>
         </div>
     )
-})
+}

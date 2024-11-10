@@ -1,6 +1,6 @@
 import { classNames } from "vk/shared/lib/classNames/classNames";
 
-import cls from "./RatingBadge.module.less";
+import cls from "./RatingBadge.module.scss";
 
 interface RatingBadgeProps {
     rating: number;

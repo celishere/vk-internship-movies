@@ -1,6 +1,6 @@
 import { IMovieInfo } from "vk/entities/Movie/interface";
 
-import cls from "./MovieInfo.module.less";
+import cls from "./MovieInfo.module.scss";
 
 interface MovieTrailerProps {
     data: IMovieInfo

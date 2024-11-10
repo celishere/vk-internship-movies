@@ -7,7 +7,7 @@ import {
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
-import cls from "./Carousel.module.less";
+import cls from "./Carousel.module.scss";
 
 interface CarouselProps {
     children: ReactNode[];

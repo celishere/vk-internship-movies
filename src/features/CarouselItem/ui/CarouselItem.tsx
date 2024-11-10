@@ -5,7 +5,7 @@ import { classNames } from "vk/shared/lib/classNames/classNames";
 
 import { RatingBadge } from "vk/shared/ui/RatingBadge";
 
-import cls from "./CarouselItem.module.less";
+import cls from "./CarouselItem.module.scss";
 
 export interface CarouselItemProps {
     id: string;
@@ -31,12 +31,9 @@ export const CarouselItem = (props: CarouselItemProps) => {
         rating
     } = props;
 
-    const imgSrc = `${ process.env.IMAGES_CDN }/${ cover.src }`;
-    const logoSrc = `${ process.env.IMAGES_CDN }/${ logo.src }`;
-
     const router = useRouter();
 
-    const open = () => router.push(`/movie/${ id }`);
+    const open = () => router.push(`/movie/${id}`);
 
     return (
         <div
@@ -45,7 +42,7 @@ export const CarouselItem = (props: CarouselItemProps) => {
         >
             <Image
                 className={ cls.CarouselBg }
-                src={ imgSrc }
+                src={ cover.src }
                 alt={ name }
                 width={ 1200 }
                 height={ 900 }
@@ -55,7 +52,7 @@ export const CarouselItem = (props: CarouselItemProps) => {
                 <div className={ cls.CarouselMeta }>
                     <Image
                         className={ cls.CarouselLogo }
-                        src={ logoSrc }
+                        src={ logo.src }
                         alt={ name }
                         width={ 300 }
                         height={ 300 }

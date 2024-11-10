@@ -1,0 +1,16 @@
+.RatingBadge {
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+.RatingBadgePositive {
+  background-color: rgb(94 255 71 / 50%);
+}
+
+.RatingBadgeNeutral {
+  background-color: rgb(103 103 103 / 50%);
+}
+
+.RatingBadgeNegative {
+  background-color: rgb(187 18 18 / 50%);
+}

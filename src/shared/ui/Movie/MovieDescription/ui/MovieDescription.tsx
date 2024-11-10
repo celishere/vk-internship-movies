@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import cls from "./MovieDescription.module.less";
+import cls from "./MovieDescription.module.scss";
 import { Button } from "vk/shared/ui/Button/Button";
 
 interface MovieDescriptionProps {

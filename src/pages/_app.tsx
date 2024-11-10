@@ -5,7 +5,7 @@ import App from "vk/app/App";
 
 import { ErrorBoundary } from "vk/app/providers/ErrorBoundary";
 
-import "../app/styles/index.less";
+import "../app/styles/index.scss";
 
 const font = localFont({
     src: [

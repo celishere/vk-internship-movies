@@ -1,11 +1,10 @@
-import { memo } from "react";
 import { useRouter } from "next/router";
 
 import { Button } from "vk/shared/ui/Button/Button";
 
-import cls from "./NotFoundLayout.module.less";
+import cls from "./NotFoundLayout.module.scss";
 
-export const NotFoundLayout = memo(() => {
+export const NotFoundLayout = () => {
     const router = useRouter();
 
     const home = () => router.push('/');
@@ -19,4 +18,4 @@ export const NotFoundLayout = memo(() => {
             <Button onClick={home}>Домой</Button>
         </div>
     )
-})
+}

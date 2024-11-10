@@ -1,4 +1,4 @@
-import cls from "./MovieTrailer.module.less";
+import cls from "./MovieTrailer.module.scss";
 
 interface MovieTrailerProps {
     name: string;

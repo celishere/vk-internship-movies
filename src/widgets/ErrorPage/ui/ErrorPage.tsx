@@ -1,6 +1,6 @@
 import { Button } from "vk/shared/ui/Button/Button";
 
-import cls from "./ErrorPage.module.less";
+import cls from "./ErrorPage.module.scss";
 
 export const ErrorPage = () => {
     const reloadPage = () => {

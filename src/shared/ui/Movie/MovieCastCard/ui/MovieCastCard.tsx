@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { IPerson } from "vk/entities/Movie/interface";
 
-import cls from "./MovieCastCard.module.less";
+import cls from "./MovieCastCard.module.scss";
 
 export const MovieCastCard = (props: IPerson) => {
     const {

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import { RatingBadge } from "vk/shared/ui/RatingBadge";
 
-import cls from "./InlineCarouselItem.module.less";
+import cls from "./InlineCarouselItem.module.scss";
 
 export interface CarouselItemProps {
     id: string;
@@ -25,8 +25,6 @@ export const InlineCarouselItem = (props: CarouselItemProps) => {
         rating
     } = props;
 
-    const imgSrc = `${ process.env.IMAGES_CDN }/${ poster.src }`;
-
     const router = useRouter();
 
     const open = () => router.push(`/movie/${ id }`);
@@ -40,7 +38,7 @@ export const InlineCarouselItem = (props: CarouselItemProps) => {
         >
             <Image
                 className={cls.CarouselBg}
-                src={imgSrc}
+                src={poster.src}
                 alt={name}
                 width={500}
                 height={500}

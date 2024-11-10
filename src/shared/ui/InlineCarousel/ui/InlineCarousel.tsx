@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 
 import { classNames } from "vk/shared/lib/classNames/classNames";
 
-import cls from "./InlineCarousel.module.less";
+import cls from "./InlineCarousel.module.scss";
 
 interface CarouselProps {
     title: string;
